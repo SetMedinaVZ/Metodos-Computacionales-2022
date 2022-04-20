@@ -7,8 +7,9 @@ def lexerAritmetico(strings):
 def main():
     strings = []
     with open("expresiones.txt") as f:
-        for lineas in f:
-            strings.extend(lineas.split())
+        lineas = f.readlines()
+        for linea in lineas:
+            strings.append(linea.strip('\n'))
     print (strings)
 
     lexerAritmetico(strings)
