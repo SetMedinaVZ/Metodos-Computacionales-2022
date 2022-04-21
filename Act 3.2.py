@@ -117,8 +117,7 @@ def lexerAritmetico(nombreArchivo):
         isPot(strings[i]);
         isAPar(strings[i]);
         isCPar(strings[i]);
-        
     
-
-
+    
+        
 lexerAritmetico('expresiones')
