@@ -17,48 +17,22 @@ def imprimeResultado(lista, tipo):
 
 def isOperador(string):
     x = re.findall("([+\-*/^=])", string)
-    if not x:
-        return False
-    elif x == "([+])":
-        imprimeResultado(x, 'Suma')
-    elif x == "([-])":
-        imprimeResultado(x, 'Resta') 
-    elif x == "/":
-        imprimeResultado(x, 'Division') 
-    elif x == "*":
-        imprimeResultado(x, 'Multiplicacion') 
-    elif x == "^":
-        imprimeResultado(x, 'Potencia') 
-    else:
-        imprimeResultado(x, 'Operador') 
-
-def isResta(string):
-    x = re.findall("([-])", string)
+    
     if not x:
         return False
     else:
-        imprimeResultado(x, 'Resta') 
-
-def isSuma(string):
-    x = re.findall("([+])", string)
-    if not x:
-        return False
-    else:
-        imprimeResultado(x, 'Suma') 
-
-def isMult(string):
-    x = re.findall("([*])", string)
-    if not x:
-        return False
-    else:
-        imprimeResultado(x, 'Multiplicación') 
-
-def isDiv(string):
-    x = re.findall("([/])", string)
-    if not x:
-        return False
-    else:
-        imprimeResultado(x, 'División') 
+        lista = limpiaLista(x)
+        for i in lista:
+            if i == "+":
+                imprimeResultado(i, 'Suma')
+            elif i == "-":
+                imprimeResultado(i, 'Resta') 
+            elif i == "/":
+                imprimeResultado(i, 'Division') 
+            elif i == "*":
+                imprimeResultado(i, 'Multiplicacion') 
+            elif i == "^":
+                imprimeResultado(i, 'Potencia') 
 
 def isAsign(string):
     x = re.findall("([=])", string)
@@ -128,18 +102,15 @@ def lexerAritmetico(nombreArchivo):
             strings.append(linea.strip('\n'))
         
             
-    print("\nToken\tTipo")
-    
     for i in range(len(strings)):
+        print("\nLinea " + str(i+1));
+        print("Token\tTipo")
         isComentario(strings[i]);
         isVariable(strings[i]);
-        isReal(strings[i]);
-        #isOperador(strings[i]);
-        isResta(strings[i]);
-        isSuma(strings[i]);
-        isMult(strings[i]);
-        isDiv(strings[i]);
         isAsign(strings[i]);
+        #isInt
+        isReal(strings[i]);
+        isOperador(strings[i]);        
         isPot(strings[i]);
         isAPar(strings[i]);
         isCPar(strings[i]);
