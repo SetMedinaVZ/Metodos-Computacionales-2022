@@ -24,6 +24,7 @@ def isComentario(string):
         lista = limpiaLista(x)
         imprimeResultado(lista, 'Comentario')
         
+        #Eliminamos el comentario del string en el que esta
         for i in lista:
             n = 0
             for j in strings:
