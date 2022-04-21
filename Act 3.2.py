@@ -14,6 +14,14 @@ def limpiaLista(array):
 def imprimeResultado(lista, tipo):
     for i in lista:
             print(i +'\t' +tipo)
+            
+def eliminaElemento(lista):
+    for i in lista:
+        n = 0
+        for j in strings:
+            if i in j:
+                strings[n] = strings[n].replace(i, '')
+            n = n + 1
 
 def isOperador(string):
     x = re.findall("([+\-*/^=])", string)
@@ -72,13 +80,8 @@ def isComentario(string):
         imprimeResultado(lista, 'Comentario')
         
         #Eliminamos el comentario del string en el que esta
-        for i in lista:
-            n = 0
-            for j in strings:
-                if i in j:
-                    strings[n] = strings[n].replace(i, '')
-                n = n + 1
-       
+        eliminaElemento(lista)
+
 def isVariable(string):
     x = re.findall("(?<![_0-9])[a-zA-Z]", string)
     if not x:
