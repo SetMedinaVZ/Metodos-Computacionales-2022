@@ -49,15 +49,8 @@ def isAsign(string):
     else:
         imprimeResultado(x, 'Asignación') 
 
-def isPot(string):
-    x = re.findall("([/^])", string)
-    if not x:
-        return False
-    else:
-        imprimeResultado(x, 'Potencia')
-
 def isAPar(string):
-    x = re.findall("([()])", string)
+    x = re.findall("([(])", string)
     if not x:
         return False
     else:
@@ -115,7 +108,6 @@ def lexerAritmetico(nombreArchivo):
         isAsign(strings[i]);
         #isInt
         isOperador(strings[i]);        
-        isPot(strings[i]);
         isAPar(strings[i]);
         isCPar(strings[i]);
     
