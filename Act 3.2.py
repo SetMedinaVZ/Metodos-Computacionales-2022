@@ -24,7 +24,7 @@ def eliminaElemento(lista):
             n = n + 1
 
 def isOperador(string):
-    x = re.findall("([+\-*/^=])", string)
+    x = re.findall("([+\-*/\^=])", string)
     
     if not x:
         return False
