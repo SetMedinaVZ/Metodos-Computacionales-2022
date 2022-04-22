@@ -83,7 +83,7 @@ def isComentario(string):
         eliminaElemento(lista)
 
 def isVariable(string):
-    x = re.findall("(?<![_0-9])[a-zA-Z]", string)
+    x = re.findall("(?![_0-9])([a-zA-Z_$][a-zA-Z_$0-9]*)", string)
     if not x:
         return False
     else:
@@ -95,7 +95,8 @@ def isReal(string):
         return False
     else:
         lista = limpiaLista(x)
-        imprimeResultado(lista, 'Real')  
+        imprimeResultado(lista, 'Real') 
+        eliminaElemento(lista)
 
 def lexerAritmetico(nombreArchivo):
 
@@ -109,10 +110,10 @@ def lexerAritmetico(nombreArchivo):
         print("\nLinea " + str(i+1));
         print("Token\tTipo")
         isComentario(strings[i]);
+        isReal(strings[i]);
         isVariable(strings[i]);
         isAsign(strings[i]);
         #isInt
-        isReal(strings[i]);
         isOperador(strings[i]);        
         isPot(strings[i]);
         isAPar(strings[i]);
