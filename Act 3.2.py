@@ -106,7 +106,6 @@ def lexerAritmetico(nombreArchivo):
         isReal(strings[i]);
         isVariable(strings[i]);
         isAsign(strings[i]);
-        #isInt
         isOperador(strings[i]);        
         isAPar(strings[i]);
         isCPar(strings[i]);
