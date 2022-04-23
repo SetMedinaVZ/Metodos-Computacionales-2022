@@ -82,14 +82,35 @@ def isVariable(string):
     else:
         imprimeResultado(x, 'Variable') 
 
+
+def isInt(array):
+    aux = []
+    for i in array:
+        x = re.search("^[+-]?[0-9]*(?![.0-9])+$", i)
+        if x:
+            aux.append(x.group())
+    return aux        
+
 def isReal(string):
     x = re.findall("([+-]?[0-9]+\.[0-9]+[eE][+-]?[0-9]{1,3})|([+-]?\.[0-9]+[eE][+-]?[0-9]{1,3})|([+-]?[0-9]+\.?[eE][+-]?[0-9]{1,3})|([+-]?[0-9]+\.[0-9]+)|([+-]?\.[0-9]+)|([+-]?[0-9]+\.?)", string)
     if not x:
         return False
     else:
         lista = limpiaLista(x)
-        imprimeResultado(lista, 'Real') 
-        eliminaElemento(lista)
+        enteros = isInt(lista)
+        if len(enteros) > 0:
+            for i in enteros:
+                n = 0
+                for j in lista:
+                    if i in j:
+                        lista.pop(n)
+            imprimeResultado(enteros, 'Entero')
+            imprimeResultado(lista, 'Real')
+            eliminaElemento(lista)
+        else:
+            imprimeResultado(lista, 'Real') 
+            eliminaElemento(lista)
+        
 
 def lexerAritmetico(nombreArchivo):
 
