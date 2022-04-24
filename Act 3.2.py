@@ -16,12 +16,23 @@ def imprimeResultado(lista, tipo):
             print(i +'\t' +tipo)
             
 def eliminaElemento(lista):
-    for i in lista:
-        n = 0
-        for j in strings:
-            if i in j:
-                strings[n] = strings[n].replace(i, '')
-            n = n + 1
+    n = len(lista)
+    for i in range(len(strings)):
+        elemString = strings[i]
+        j = 0
+        #Si la lista no esta vacia
+        while n > 0 and j != n:
+            elemLista = lista[j]
+            if elemLista in elemString:
+                strings[i] = strings[i].replace(lista[j], '')
+                # lista[j] = lista[j].replace(lista[j],'')
+                lista.pop(j)
+                n = len(lista)
+                j = 0
+            else:
+                j = j + 1
+        if len(lista) == 0:
+            break
 
 def isOperador(string):
     x = re.findall("([+\-*/\^=])", string)
@@ -102,9 +113,9 @@ def isReal(string):
             for i in enteros:
                 n = 0
                 for j in lista:
-                    if i in j:
+                    if i == j:
                         lista.pop(n)
-                        n = n + 1
+                    n = n + 1
             imprimeResultado(enteros, 'Entero')
             imprimeResultado(lista, 'Real')
             eliminaElemento(lista)
