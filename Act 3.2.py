@@ -104,6 +104,7 @@ def isReal(string):
                 for j in lista:
                     if i in j:
                         lista.pop(n)
+                        n = n + 1
             imprimeResultado(enteros, 'Entero')
             imprimeResultado(lista, 'Real')
             eliminaElemento(lista)
