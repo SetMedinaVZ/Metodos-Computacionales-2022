@@ -102,6 +102,34 @@ def isInt(array):
             aux.append(x.group())
     return aux        
 
+def eliminaIntFromReal(arrayInt, arrayReals):
+    aux = arrayInt.copy()
+    n = len(aux)
+    n_2 = len(arrayReals) 
+    if len(arrayInt) > 0:
+        i = 0
+        while i <= n_2:
+            j = 0
+            flag = True
+            while n >= 0 and flag:
+                if n == 0:
+                    return arrayReals
+                elif n == j:
+                    flag = False
+                else:
+                    elemReal = arrayReals[i]
+                    elemInt = aux[j]
+                    if elemInt == elemReal:
+                        #arrayReals[i] = arrayReals[i].replace(arrayInt[j] ,'')
+                        aux.pop(j)
+                        arrayReals.pop(i)
+                        n = len(aux)
+                        n_2 = len(arrayReals)
+                        j = 0
+                    else:
+                        j = j + 1
+            i = i + 1
+
 def isReal(string):
     x = re.findall("([+-]?[0-9]+\.[0-9]+[eE][+-]?[0-9]{1,3})|([+-]?\.[0-9]+[eE][+-]?[0-9]{1,3})|([+-]?[0-9]+\.?[eE][+-]?[0-9]{1,3})|([+-]?[0-9]+\.[0-9]+)|([+-]?\.[0-9]+)|([+-]?[0-9]+\.?)", string)
     if not x:
@@ -110,15 +138,12 @@ def isReal(string):
         lista = limpiaLista(x)
         enteros = isInt(lista)
         if len(enteros) > 0:
-            for i in enteros:
-                n = 0
-                for j in lista:
-                    if i == j:
-                        lista.pop(n)
-                    n = n + 1
+            lista = eliminaIntFromReal(enteros, lista)
             imprimeResultado(enteros, 'Entero')
-            imprimeResultado(lista, 'Real')
-            eliminaElemento(lista)
+            eliminaElemento(enteros)
+            if len(lista) > 0:
+                imprimeResultado(lista, 'Real')
+                eliminaElemento(lista)
         else:
             imprimeResultado(lista, 'Real') 
             eliminaElemento(lista)
