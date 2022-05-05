@@ -44,373 +44,195 @@
                 width="100px"
             />
         </div>
-        <div class="div5"><p class='comentario'>
-# Python program for implementation of Quicksort Sort </p>
-<p class='comentario'>
-# This function takes last element as pivot, places </p>
-<p class='comentario'>
-# the pivot element at its correct position in sorted </p>
-<p class='comentario'>
-# array, and places all smaller (smaller than pivot) </p>
-<p class='comentario'>
-# to left of pivot and all greater elements to right </p>
-<p class='comentario'>
-# of pivot </p>
-<br><span class='definicionFuncion'>
-def</span>
-<span class='funcion'>
-partition</span>
+        <div class="div5"><span class='reservada'>
+package</span>
+<span class='identificador'>
+main</span>
+<br><span class='import'>
+import</span>
 <span class='parentesis'>
 (</span>
-<span class='identificador'>
-arr</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-low</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-high</span>
+<span class='string'>
+" math/rand " </span>
 <span class='parentesis'>
 )</span>
-<span class='dosPuntos'>
-:</span><br>
-<span class='identificador'>
-i</span>
-<span class='asignacion'>
-=</span>
+<br><span class='definicionFuncion'>
+func</span>
+<span class='funcion'>
+qsort</span>
 <span class='parentesis'>
 (</span>
 <span class='identificador'>
-low</span>
+a</span>
+<span class='identificador'>
+[]int</span>
+<span class='parentesis'>
+)</span>
+<span class='identificador'>
+[]int</span>
+<span class='llaves'>
+{</span>
+<br><span class='if'>
+if</span>
+<span class='funcion'>
+len(a)</span>
+<span class='minor'>
+<</span>
+<span class='entero'>
+2</span>
+<span class='llaves'>
+{</span>
+<br><span class='return'>
+return</span>
+<span class='identificador'>
+a</span>
+<p class='llaves'>
+}</p>
+<span class='else'>
+else</span>
+<span class='llaves'>
+{</span>
+<span class='reservada'>
+continue</span>
+<p class='llaves'>
+}</p>
+<span class='identificador'>
+left</span>
+<span class='coma'>
+,</span>
+<span class='identificador'>
+right</span>
+<span class='asignacion'>
+=</span>
+<span class='entero'>
+0</span>
+<span class='coma'>
+,</span>
+<span class='funcion'>
+len(a)</span>
 <span class='resta'>
 -</span>
 <span class='entero'>
 1</span>
-<span class='parentesis'>
-)</span>
 <p class='comentario'>
-# index of smaller element </p>
+// Pick a pivot </p>
 <span class='identificador'>
-pivot</span>
+pivotIndex</span>
+<span class='asignacion'>
+=</span>
+<span class='funcion'>
+rand.Int()</span>
+<span class='modulo'>
+%</span>
+<span class='funcion'>
+len(a)</span>
+<p class='comentario'>
+// Move the pivot to the right </p>
+<span class='identificador'>
+a[pivotIndex]</span>
+<span class='coma'>
+,</span>
+<span class='identificador'>
+a[right]</span>
 <span class='asignacion'>
 =</span>
 <span class='identificador'>
-arr[high]</span>
+a[right]</span>
+<span class='coma'>
+,</span>
+<span class='identificador'>
+a[pivotIndex]</span>
 <p class='comentario'>
-# pivot </p>
+// Pile elements smaller than the pivot on the left </p>
 <br><span class='for'>
 for</span>
 <span class='identificador'>
-j</span>
+i</span>
+<span class='operador'>
+:=</span>
 <span class='reservada'>
-in</span>
-<span class='funcion'>
 range</span>
-<span class='parentesis'>
-(</span>
 <span class='identificador'>
-low</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-high</span>
-<span class='parentesis'>
-)</span>
-<span class='dosPuntos'>
-:</span><br>
-<p class='comentario'>
-# If current element is smaller than or </p>
-<p class='comentario'>
-# equal to pivot </p>
+a</span>
+<span class='llaves'>
+{</span>
 <br><span class='if'>
 if</span>
 <span class='identificador'>
-arr[j]</span>
-<span class='minorEqual'>
-<=</span>
-<span class='identificador'>
-pivot</span>
-<span class='dosPuntos'>
-:</span><br>
-<p class='comentario'>
-# increment index of smaller element </p>
-<span class='identificador'>
-i</span>
-<span class='asignacion'>
-=</span>
-<span class='identificador'>
-i</span>
-<span class='suma'>
-+</span>
-<span class='entero'>
-1</span>
-<span class='identificador'>
-arr[i]</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-arr[j]</span>
-<span class='asignacion'>
-=</span>
-<span class='identificador'>
-arr[j]</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-arr[i]</span>
-<span class='identificador'>
-arr[i+1]</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-arr[high]</span>
-<span class='asignacion'>
-=</span>
-<span class='identificador'>
-arr[high]</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-arr[i+1]</span>
-<br><span class='return'>
-return</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-i</span>
-<span class='suma'>
-+</span>
-<span class='entero'>
-1</span>
-<span class='parentesis'>
-)</span>
-<p class='comentario'>
-# The main function that implements QuickSort </p>
-<p class='comentario'>
-# arr[] --> Array to be sorted, </p>
-<p class='comentario'>
-# low --> Starting index, </p>
-<p class='comentario'>
-# high --> Ending index </p>
-<p class='comentario'>
-# Function to do Quick sort </p>
-<br><span class='definicionFuncion'>
-def</span>
-<span class='funcion'>
-quickSort</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-arr</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-low</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-high</span>
-<span class='parentesis'>
-)</span>
-<span class='dosPuntos'>
-:</span><br>
-<br><span class='if'>
-if</span>
-<span class='funcion'>
-len(arr)</span>
-<span class='equal'>
-==</span>
-<span class='entero'>
-1</span>
-<span class='dosPuntos'>
-:</span><br>
-<br><span class='return'>
-return</span>
-<span class='identificador'>
-arr</span>
-<br><span class='if'>
-if</span>
-<span class='identificador'>
-low</span>
+a[i]</span>
 <span class='minor'>
 <</span>
 <span class='identificador'>
-high</span>
-<span class='dosPuntos'>
-:</span><br>
-<p class='comentario'>
-# pi is partitioning index, arr[p] is now </p>
-<p class='comentario'>
-# at right place </p>
+a[right]</span>
+<span class='llaves'>
+{</span>
 <span class='identificador'>
-pi</span>
+a[i]</span>
+<span class='coma'>
+,</span>
+<span class='identificador'>
+a[left]</span>
 <span class='asignacion'>
 =</span>
-<span class='funcion'>
-partition</span>
-<span class='parentesis'>
-(</span>
 <span class='identificador'>
-arr,</span>
+a[left]</span>
+<span class='coma'>
+,</span>
 <span class='identificador'>
-low,</span>
+a[i]</span>
 <span class='identificador'>
-high</span>
-<span class='parentesis'>
-)</span>
+left</span>
+<span class='masMas'>
+++</span>
+<p class='llaves'>
+}</p>
+<p class='llaves'>
+}</p>
 <p class='comentario'>
-# Separately sort elements before </p>
-<p class='comentario'>
-# partition and after partition </p>
-<span class='funcion'>
-quickSort</span>
-<span class='parentesis'>
-(</span>
+// Place the pivot after the last smaller element </p>
 <span class='identificador'>
-arr</span>
+a[left]</span>
 <span class='coma'>
 ,</span>
 <span class='identificador'>
-low</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-pi</span>
-<span class='resta'>
--</span>
-<span class='entero'>
-1</span>
-<span class='parentesis'>
-)</span>
-<span class='funcion'>
-quickSort</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-arr</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-pi</span>
-<span class='suma'>
-+</span>
-<span class='entero'>
-1</span>
-<span class='coma'>
-,</span>
-<span class='identificador'>
-high</span>
-<span class='parentesis'>
-)</span>
-<p class='comentario'>
-# Driver code to test above </p>
-<span class='identificador'>
-arr</span>
+a[right]</span>
 <span class='asignacion'>
 =</span>
-<span class='corchetes'>
-[</span>
-<span class='entero'>
-10</span>
+<span class='identificador'>
+a[right]</span>
 <span class='coma'>
 ,</span>
-<span class='entero'>
-7</span>
-<span class='coma'>
-,</span>
-<span class='entero'>
-8</span>
-<span class='coma'>
-,</span>
-<span class='entero'>
-9</span>
-<span class='coma'>
-,</span>
-<span class='entero'>
-1</span>
-<span class='coma'>
-,</span>
-<span class='entero'>
-5</span>
-<span class='corchetes'>
-]</span>
 <span class='identificador'>
-n</span>
-<span class='asignacion'>
-=</span>
-<span class='funcion'>
-len</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-arr</span>
-<span class='parentesis'>
-)</span>
-<span class='funcion'>
-quickSort</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-arr,</span>
-<span class='errorFormato'>
-0,</span>
-<span class='identificador'>
-n</span>
-<span class='resta'>
--</span>
-<span class='entero'>
-1</span>
-<span class='parentesis'>
-)</span>
-<span class='funcion'>
-print</span>
-<span class='parentesis'>
-(</span>
-<span class='string'>
-" Sorted array is: " </span>
-<span class='parentesis'>
-)</span>
-<br><span class='for'>
-for</span>
-<span class='identificador'>
-i</span>
-<span class='reservada'>
-in</span>
-<span class='funcion'>
-range</span>
-<span class='parentesis'>
-(</span>
-<span class='identificador'>
-n</span>
-<span class='parentesis'>
-)</span>
-<span class='dosPuntos'>
-:</span><br>
-<span class='funcion'>
-print</span>
-<span class='parentesis'>
-(</span>
-<span class='string'>
-" %d " </span>
-<span class='modulo'>
-%</span>
-<span class='identificador'>
-arr[i]</span>
-<span class='parentesis'>
-)</span>
-<span class='coma'>
-,</span>
+a[left]</span>
 <p class='comentario'>
-# This code is contributed by Mohit Kumra </p>
-<p class='comentario'>
-#This code in improved by https://github.com/anushkrishnav </p>
+// Go down the rabbit hole </p>
+<span class='funcion'>
+qsort</span>
+<span class='parentesis'>
+(</span>
+<span class='identificador'>
+a[:left]</span>
+<span class='parentesis'>
+)</span>
+<span class='funcion'>
+qsort</span>
+<span class='parentesis'>
+(</span>
+<span class='identificador'>
+a[left+1:]</span>
+<span class='parentesis'>
+)</span>
+<br><span class='return'>
+return</span>
+<span class='identificador'>
+a</span>
+<p class='llaves'>
+}</p>
 </div>
 </div>
 <div class='nombreArchivo'>
 <h3>
 Archivo: <h4>
-Quicksort.py</div>
+Quicksort.go</div>
 </body>
 </html>

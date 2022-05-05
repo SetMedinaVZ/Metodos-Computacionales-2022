@@ -8,6 +8,9 @@ func qsort( a []int ) []int {
 	if len(a) < 2 {
 		return a
 	}
+	else {
+		continue
+	}
 
 	left , right = 0 , len(a) - 1
 

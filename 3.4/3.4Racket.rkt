@@ -3,7 +3,7 @@
 (require xml);Importar libreria para exportar XML
 
 ;Lenguajes seleccionados
-;GO R Python
+;GO Python
 
 ;-------------------funciones extras-------------------
 ;funcion counter
@@ -270,7 +270,7 @@
 ;verifica que sea un else
 ;return true or false
 (define (isElse string)
-  (if(regexp-match #px"^else+$" string)
+  (if(regexp-match #px"^else+" string)
      ;(display "Else\n")
      ;(display "Otro\n")
      #t
@@ -1019,4 +1019,4 @@
 
 
 ;ejecucion de ejemplo
-(lexer "Quicksort.py" "out.html")
+(lexer "Quicksort.go" "out.html")
