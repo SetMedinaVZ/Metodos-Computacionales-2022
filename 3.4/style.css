@@ -1,0 +1,41 @@
+body{
+    background-color:#282c34 !important;
+}
+
+.dosPuntos, .coma, .puntoComa{
+    color: aqua;
+}
+
+.comentario, .string{
+    color: #035e03;
+}
+
+.definicionFuncion, .if, .else, .for, .reservada, .return, .import, .end{
+    color: #c5a5c5;
+}
+
+.boolean{
+    color: #ffff00;
+}
+
+.real, .minorEqual, .majorEqual, .equal, .diferente, .masMas, .asignacion, .major, .minor, .suma,
+.resta, .multiplicacion, .division, .potencia, .modulo, .entero, .operador{
+    color: #880000;
+}
+
+.llaves, .corchetes, .parentesis{
+    color: #ffa500;
+}
+
+.identificador{
+    color: white;
+}
+
+.funcion{
+    color: #3587e7;
+}
+
+.errorFormato{
+    color: white;
+    text-decoration: underline wavy red;
+}
