@@ -5,6 +5,10 @@
 ;Lenguajes seleccionados
 ;GO Python
 
+;Alejandro Daniel Dennis Hernández----A00831138
+;Sebastián Medina Veraza--------------A00827461
+;Mauricio Ian Gómez Flores------------A01023943
+
 ;-------------------funciones extras-------------------
 ;funcion counter
 ;input string
