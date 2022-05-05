@@ -6,8 +6,12 @@ body{
     color: aqua;
 }
 
-.comentario, .string{
+.string{
     color: #035e03;
+}
+
+.comentario{
+    color: gray;
 }
 
 .definicionFuncion, .if, .else, .for, .reservada, .return, .import, .end{
@@ -20,7 +24,7 @@ body{
 
 .real, .minorEqual, .majorEqual, .equal, .diferente, .masMas, .asignacion, .major, .minor, .suma,
 .resta, .multiplicacion, .division, .potencia, .modulo, .entero, .operador{
-    color: #880000;
+    color: #be1313;
 }
 
 .llaves, .corchetes, .parentesis{
@@ -38,4 +42,19 @@ body{
 .errorFormato{
     color: white;
     text-decoration: underline wavy red;
+}
+
+h3,h4{
+    color: white;
+}
+
+.nombreArchivo{
+    border: 2px white solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div5{
+    margin-left: 1vw;
 }

@@ -636,7 +636,7 @@
 ;imprime los de una linea/lista
 ;return true or false
 (define (isOperador string)
-  (if(regexp-match #rx"^[,||, &&,<<?|&&?|\\|\\|?|and|or|\\+=|\\*=|\\/=|\\-\\-]+$" string)
+  (if(regexp-match #rx"^[,||, &&,<<?|&&?|\\|\\|?|and|or|\\+=|\\*:=|\\/=|\\-\\-]+$" string)
      ;(display "Operador\n")
      ;(display "Otro\n")
      #t
@@ -755,14 +755,14 @@
               (display "</p>\n" out)
       ]
       [(isDefFunc(first lst)) 
-              (display "<span class='definicionFuncion'>\n" out)
+              (display "<br><span class='definicionFuncion'>\n" out)
                 (display (first lst) out)
               (display "</span>\n" out)
       ]
       [(isFuncion (first lst) out) 
       ]
       [(isIf(first lst)) 
-              (display "<span class='if'>\n" out) 
+              (display "<br><span class='if'>\n" out) 
                 (display (first lst) out)
               (display "</span>\n" out)
       ]
@@ -777,12 +777,12 @@
               (display "</span>\n" out)
         ]
       [(isImport(first lst)) 
-              (display "<span class='import'>\n" out) 
+              (display "<br><span class='import'>\n" out) 
                 (display (first lst) out)
               (display "</span>\n" out)
       ]
       [(isReturn(first lst)) 
-              (display "<span class='return'>\n" out)
+              (display "<br><span class='return'>\n" out)
                 (display (first lst) out)
               (display "</span>\n" out)
       ]
@@ -988,17 +988,19 @@
   ;se cierra el html de la tabla 
   ;(display "<tbody>\n" out)
   ;(display "</table>\n" out)
-
+  (display "</div>\n" out)
+  (display "</div>\n" out)
   ;nombre del archivo
+  (display "<div class='nombreArchivo'>\n" out)
   (display "<h3>\n" out)
   (display "Archivo: " out)
 
   (display "<h4>\n" out)
   (display filename out)
+  (display "</div>\n" out)
 
   
-  (display "</div>\n" out)
-  (display "</div>\n" out)
+
   (display "</body>\n" out)
   
   ;se cierra el html
@@ -1017,4 +1019,4 @@
 
 
 ;ejecucion de ejemplo
-(lexer "Quicksort.go" "out.html")
+(lexer "Quicksort.py" "out.html")
