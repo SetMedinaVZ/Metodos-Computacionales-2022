@@ -1019,4 +1019,4 @@
 
 
 ;ejecucion de ejemplo
-(lexer "Quicksort.go" "out.html")
+(lexer "Quicksort.py" "out.html")
