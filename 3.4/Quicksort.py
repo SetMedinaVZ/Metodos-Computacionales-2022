@@ -33,13 +33,13 @@ def partition( arr , low , high ) :
 
 
 def quickSort( arr , low , high ) :
-	if len(arr) == 1 :
+	if len( arr ) == 1 :
 		return arr
 	if low < high :
 
 		# pi is partitioning index, arr[p] is now
 		# at right place
-		pi = partition( arr, low, high )
+		pi = partition( arr , low , high )
 
 		# Separately sort elements before
 		# partition and after partition
