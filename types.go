@@ -4,7 +4,41 @@ import(
 	"fmt"
 )
 
+//Declaración de funciones
+//func identificador(parametros) tipo_de_retorno {}
 
+//Recibe 2 arreglos de tamaño 3
+func dot_product(v1,v2 [3]float64) (float64, bool) {
+	if len(v1) != len(v2) {
+		return 0.0, false
+	}
+
+	var result float64 = 0.0
+	for i := 0; i < len(v1); i++ {
+		result += v1[i] * v2[i]
+	}
+	return result, true
+}
+
+//Recibe 2 slices de x tamaño
+func dot_product2(v1,v2 []float64) (float64,bool) {
+	//Verificar que los slices tengan el mismo tamaño
+	if len(v1) != len(v2) {
+		return 0.0, false
+	}
+
+	var result float64 = 0.0
+	for i := 0; i < len(v1); i++ {
+		result += v1[i] * v2[i]
+	}
+	return result, true
+}
+/*
+//Metodos
+func (c celsius) kelvin() float64 {
+	return c + 273.15
+}
+*/
 
 func main(){
 	var valor = 3.141592654
@@ -73,36 +107,12 @@ func main(){
 
 	fmt.Println(arreglo,s1)
 	s1 = append(s1, 8)
-	 
-
+	
+	/*
+	var grados_c celsius
+	grados_c = 23
+	fmt.Println("Hoy hay ", grados_c, "°C")
+	var kelvin1 kelvin = grados_c.kelvin()
+	*/
 }
 
-//Declaración de funciones
-//func identificador(parametros) tipo_de_retorno {}
-
-//Recibe 2 arreglos de tamaño 3
-func dot_product(v1,v2 [3]float64) (float64, bool) {
-	if len(v1) != len(v2) {
-		return 0.0, false
-	}
-
-	var result float64 = 0.0
-	for i := 0; i < len(v1); i++ {
-		result += v1[i] * v2[i]
-	}
-	return result, true
-}
-
-//Recibe 2 slices de x tamaño
-func dot_product2(v1,v2 []float64) (float64,bool) {
-	//Verificar que los slices tengan el mismo tamaño
-	if len(v1) != len(v2) {
-		return 0.0, false
-	}
-
-	var result float64 = 0.0
-	for i := 0; i < len(v1); i++ {
-		result += v1[i] * v2[i]
-	}
-	return result, true
-}
