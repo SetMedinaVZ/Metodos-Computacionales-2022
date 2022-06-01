@@ -1,3 +1,7 @@
+//Alejandro Daniel Dennis Hernández----A00831138
+//Sebastián Medina Veraza--------------A00827461
+//Mauricio Ian Gómez Flores------------A01023943
+
 package main
 
 import (
@@ -118,4 +122,3 @@ func main(){
 	fmt.Println("La suma de los primos de manera secuencial es:", sum2, "en", end.Sub(start))
 
 }
-
