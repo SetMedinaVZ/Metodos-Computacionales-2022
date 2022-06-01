@@ -10,7 +10,7 @@ func hola_hilo(id int, c chan int) {
 	c <- id //Enviamos un mensaje al canal
 }
 
-func main() {
+func main(){
 	/* El canal es compartido por todos los hilos.
 	El canal es como una tuberia que nos lleva al resultado
 	y los hilos son los que le inyectan contenido.
