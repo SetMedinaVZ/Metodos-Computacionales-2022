@@ -11,7 +11,7 @@ import (
 )
 
 //Funcion que genera el array de numeros primos con un rango determinado
-//y devuelve la suma de los primos de manera paralela
+//y devuelve la suma de los primos de manera secuencial
 func primeNumbersSum(n int) int{
 	if n < 2 {
 		return 0
@@ -43,7 +43,7 @@ func primeNumbersSum(n int) int{
 
 //Funcion que genera el array de numeros primos con un rango determinado
 //y devuelve la suma de los primos de manera paralela
-//n1 y n2 son los limites de la criba
+//n1 y n2 son es el rango de numeros primos a generar
 func primeNumbersSum_Parallel(n1, n2 int, c chan int){
 	if n1 < 2  || n2 < 2 {
 		return
@@ -86,7 +86,7 @@ func main(){
 	//Cantidad de hilos a usar
 	const nThreads = 10
 
-	//Por cada hilo, se ejecuta la funcion sieveOfEratosthenes.
+	//Por cada hilo, se ejecuta la funcion y se envian los resultados al canal
 	go primeNumbersSum_Parallel(2, 500_000, c)
 	go primeNumbersSum_Parallel(500_001, 1_000_000, c)
 	go primeNumbersSum_Parallel(1_000_001, 1_500_000, c)
