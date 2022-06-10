@@ -1,0 +1,18 @@
+vector=[]
+TAM=7
+positivos, negativos, ceros=0, 0, 0
+for i in range(TAM):
+    print i
+    vector.append(int(raw_input('Valor: ')))
+print "obtenemos   vector= ",vector
+print ""
+for j in vector:
+    if j< 0:
+        negativos=negativos+1
+    elif j > 0:
+        positivos=positivos+1
+    else:
+        ceros=ceros+1
+print "positivos: ",positivos
+print "negativos: ",negativos
+print "ceros: ",ceros

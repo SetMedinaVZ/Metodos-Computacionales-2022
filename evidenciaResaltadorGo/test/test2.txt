@@ -1,0 +1,12 @@
+numero = 33
+cadena = "Python"
+booleano = True
+
+#tipos
+print("tipo: ",type(numero) )
+print("tipo: ",type(cadena) )
+print("tipo: ",type(booleano) )
+# direccion de memoria
+print("direccion de memoria: ",id(numero) )
+print("direccion de memoria: ",id(cadena) )
+print("direccion de memoria: ",id(booleano) )

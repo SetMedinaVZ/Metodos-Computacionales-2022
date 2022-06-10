@@ -1,0 +1,25 @@
+import sys
+num1=0
+num2=0
+a=0
+b=0
+mcm=0
+mcd=0
+if len(sys.argv)>=2:
+    print "nombre del programa: ",sys.argv[0]
+    print "\nnumero 1: ",sys.argv[1],",numero 2:  ",sys.argv[2]
+    num1=int(sys.argv[1])
+    num2=int(sys.argv[2])
+    a=num1
+    b=num2
+    while a!=b:
+        if a>b:
+            a=a-b
+        else:
+            b=b-a
+    mcm=(num1*num2)/b
+    mcd=b
+    print "\nM.C.M. obtenido: ",mcm
+    print "\nM.C.D. obtenido: ",mcd
+else:
+    print "no se introdujo ningún dato"
