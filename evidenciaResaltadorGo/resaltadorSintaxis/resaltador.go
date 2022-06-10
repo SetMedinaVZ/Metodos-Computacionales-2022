@@ -119,6 +119,13 @@ func estaEn(arreglo []string, string string) bool {
 	return false
 }
 
+//Funcion que retorna el html del nombre del archivo con el final del mismo
+func inyectarHTML(nombre string) string {
+	html := "<div class='nombreArchivo'>\n<h3>" + nombre + "</h4>\n</div>\n"
+	html += htmlFinal
+	return html
+}
+
 //Funcion que realiza el resaltado de sintaxis de un archivo de texto recibido
 func ResaltadorSecuencial(nombreArchivo, nombreSalida string) {
 	//Abrimos el archivo
@@ -365,7 +372,7 @@ func ResaltadorSecuencial(nombreArchivo, nombreSalida string) {
 	} //Fin del for que recorre el archivo
 
 	//Escribimos el string final en el archivo
-	salida.WriteString(htmlFinal)
+	salida.WriteString(inyectarHTML(nombreArchivo))
 	salida.Sync()
 }
 
@@ -614,7 +621,7 @@ func ResaltadorParalelo(nombreArchivo, nombreSalida string, c chan string) {
 	} //Fin del for que recorre el archivo
 
 	//Escribimos el string final en el archivo
-	salida.WriteString(htmlFinal)
+	salida.WriteString(inyectarHTML(nombreArchivo))
 	salida.Sync()
 	c <- "El archivo ha acabado!"
 }
