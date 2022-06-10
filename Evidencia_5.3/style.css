@@ -2,11 +2,11 @@ body{
     background-color:#282c34 !important;
 }
 
-.dosPuntos, .coma, .puntoComa{
+.delimitador{
     color: aqua;
 }
 
-.string{
+.cadena{
     color: #035e03;
 }
 
@@ -14,7 +14,7 @@ body{
     color: gray;
 }
 
-.definicionFuncion, .if, .else, .for, .reservada, .return, .import, .end{
+.palabraReservada{
     color: #c5a5c5;
 }
 
@@ -22,14 +22,10 @@ body{
     color: #ffff00;
 }
 
-.real, .minorEqual, .majorEqual, .equal, .diferente, .masMas, .asignacion, .major, .minor, .suma,
-.resta, .multiplicacion, .division, .potencia, .modulo, .entero, .operador{
+.operador, .numero{
     color: #be1313;
 }
 
-.llaves, .corchetes, .parentesis{
-    color: #ffa500;
-}
 
 .identificador{
     color: white;
@@ -39,7 +35,7 @@ body{
     color: #3587e7;
 }
 
-.errorFormato{
+.error{
     color: white;
     text-decoration: underline wavy red;
 }
