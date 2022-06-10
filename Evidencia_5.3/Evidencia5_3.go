@@ -141,7 +141,7 @@ func main() {
 
 	//Variables para leer el archivo
 	line := ""   //Linea actual
-	str := "&nbsp;&nbsp;&nbsp;&nbsp;<p>" //linea que se va a agregar al html
+	str := "<p>" //linea que se va a agregar al html
 	char := ""   //Caracter actual
 	lexema := "" //Lexema actual
 	count := 0   //Contador de lineas
@@ -169,7 +169,7 @@ func main() {
 				//Agregamos la linea al html
 				salida.WriteString(str)
 				//Reiniciamos la variable
-				str = "&nbsp;&nbsp;&nbsp;&nbsp;<p>"
+				str = "<p>"
 				//Salimos del ciclo
 				break
 
