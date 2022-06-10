@@ -28,7 +28,7 @@ var alfabeto = []string{
 	"q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 	"A", "B", "C", "D", "E", "F", "G",
 	"H", "I", "J", "K", "L", "M", "N", "O", "P",
-	"Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+	"Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_",
 }
 
 //Numeros
@@ -114,10 +114,9 @@ func estaEn(arreglo []string, string string) bool {
 	return false
 }
 
-
 func main(){
 	//Abrimos el archivo
-	archivo, err1 := os.Open("archivo.txt")
+	archivo, err1 := os.Open("test.txt")
 
 	//Creamos el archivo de salida
 	salida, err2 := os.Create("salida.html")
@@ -137,7 +136,7 @@ func main(){
 
 	//Variables para leer el archivo
 	line := "" //Linea actual
-	str := "" //linea que se va a agregar al html
+	str := "<p>" //linea que se va a agregar al html
 	char := "" //Caracter actual
 	count := 0 //Contador de lineas
 	
@@ -148,11 +147,117 @@ func main(){
 	//Recorremos el archivo linea por linea
 	for scanner.Scan() {
 		count++
+
 		//Obtenemos la linea actual
 		line = scanner.Text()
-		//
 
+		//Establecemos i & j
+		i := 0 //para recorrer la linea inicio
+		j := 0 //auxiliar para recorrer la linea stop
 
+		//Recorremos la linea actual
+		for i < len(line) {
+			//Obtenemos el caracter actual
+			char = string(line[i])
 
+			//Verificamos que ya se haya recorrido la linea
+			if i == len(line)-1 {
+				//Si ya se ha recorrido la linea cerramos el parrafo 
+				str += "</p>"
+				//Agregamos la linea al html
+				salida.WriteString(str)
+				//Reiniciamos la variable
+				str = "<p>"
+				//Salimos del ciclo
+				break
+
+				//Si es comentario
+			} else if char == "#" {
+				//Guardamos todo el resto de la linea 
+				str += "<span class = comentario>" + line[i:] + "</span>" 
+				//Salimos del ciclo
+				break
+				
+				//Si es un espacio
+			}	else if char == " " {
+				j = 0 //En este caso J cuenta los espacios
+				//Recorremos la linea hasta que no haya espacios
+				for char == " " {
+					//si el siguiente caracter no es un espacio aumentamos i
+					if string(line[i+1]) != " " {
+						str += char 
+						i++
+					} else{
+						//si el siguiente caracter es un espacio aumentamos j e i
+						i++
+						j++
+						//Si j llega a 3 agregamos tab
+						if j == 3 {
+							//Agregamos el tab
+							str += "&nbsp;&nbsp;&nbsp;"
+							j = 0 //Reiniciamos j
+						}
+					}
+				}
+				//Si el caracter actual es una letra
+			} else if estaEn(alfabeto, char) {
+				//Guardamos el caracter
+				str += char
+				j = i + 1
+
+				//Recorremos la linea desde i 
+				for j < len(line) {
+					//Obtenemos el caracter actual
+					char = string(line[j])
+					//Si el caracter es una letra o un numero
+					if estaEn(alfabeto, char) || estaEn(numeros, char) {
+						//Agregamos el caracter
+						str += char
+						//Aumentamos j
+						j++
+
+					  //Si no es letra o numero
+					} else {
+						//Verificamos que sea palabra reservada
+						if estaEn(reservadas, line[i:j]) {
+							//Agregamos el span
+							str += "<span class = palabraReservada>" + line[i:j] + "</span>"
+							//Salimos del ciclo
+							break
+
+							//Si no es palabra reservada quiere decir que es un identificador
+						} else {
+							//Agregamos el span
+							str += "<span class = identificador>" + line[i:j] + "</span>"
+							//Salimos del ciclo
+							break
+						}
+
+					}
+				}
+				i = j //Dejamos i en donde termino j
+
+				//Si es un numero
+			} else if estaEn(numeros, char) {
+				//Guardamos el caracter
+				str += char
+				//Igualamos j a i + 1
+				j = i + 1
+
+				//Recorremos la linea desde i
+				for j < len(line) {
+					//Obtenemos el caracter actual
+					char = string(line[j])
+					//Si el caracter es un numero, punto o una E o una e
+					if estaEn(numeros, char) || char == "." || char == "E" || char == "e" {
+						//Agregamos el caracter
+						str += char
+						//Aumentamos j
+						j++
+					}
+				}
+
+			}
+		}
 	}
 }
