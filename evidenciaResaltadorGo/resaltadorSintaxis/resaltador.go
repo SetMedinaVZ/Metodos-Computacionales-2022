@@ -576,7 +576,7 @@ func ResaltadorParalelo(nombreArchivo, nombreSalida string, c chan string) {
 						//Obtenemos el caracter actual
 						char = string(line[j])
 						//Si el caracter es una comilla creamos el span
-						if char == "\"" {
+						if char == "\"" || char == "'" {
 							lexema += char
 							str += "<span class = cadena>" + lexema + "</span>"
 							//Reiniciamos el lexema
