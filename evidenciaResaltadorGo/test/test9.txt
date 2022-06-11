@@ -3,7 +3,7 @@ TAM=7
 positivos, negativos, ceros=0, 0, 0
 for i in range(TAM):
     print i
-    vector.append(int(raw_input('Valor: ')))
+    vector.append(int(raw_input("Valor: ")))
 print "obtenemos   vector= ",vector
 print ""
 for j in vector:

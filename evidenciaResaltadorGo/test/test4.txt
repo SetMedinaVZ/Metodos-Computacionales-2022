@@ -1,10 +1,10 @@
 import os
 
 # Sub types.
-SubTypes = ['.srt']
+SubTypes = [".srt"]
 
 # Video types.
-VideoTypes = ['.mp4', '.avi', '.mkv']
+VideoTypes = [".mp4", ".avi", ".mkv"]
 
 def endsWith(str, list):
     for string in list:
