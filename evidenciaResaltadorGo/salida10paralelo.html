@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltador de sintaxis</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Resaltador léxico</span>
+        </div>
+    </nav>
+    <div class="parent">
+        <div class="d-flex justify-content-center bg-white">
+            <img
+                src="./img/Python.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+            <img
+                src="./img/Go.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+        </div>
+        <div class="div5">
+
+<p><span class = palabraReservada>import</span>&nbsp;<span class = identificador>logging</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>sys</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>os</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>flickrapi</span><span class = palabraReservada>def</span>&nbsp;<span class = identificador>get_photos_for_artist</span><span class = delimitador>(</span><span class = identificador>artist</span><span class = operador>=</span><span class = palabraReservada>None</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>if</span>&nbsp;<span class = palabraReservada>not</span>&nbsp;<span class = identificador>artist</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>logging</span><span class = delimitador>.</span><span class = identificador>error</span><span class = delimitador>(</span><span class = cadena>"can not find photos for unknown artist"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = palabraReservada>None</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>api_key</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = cadena>"XXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>flickr</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>flickrapi</span><span class = delimitador>.</span><span class = identificador>FlickrAPI</span><span class = delimitador>(</span><span class = identificador>api_key</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>gen</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>flickr</span><span class = delimitador>.</span><span class = identificador>walk</span><span class = delimitador>(</span><span class = identificador>tags</span><span class = operador>=</span><span class = identificador>artist</span><span class = delimitador>,</span>&nbsp;<span class = identificador>content_type</span><span class = operador>=</span><span class = numero>1</span><span class = delimitador>,</span>&nbsp;<span class = identificador>per_page</span><span class = operador>=</span><span class = numero>10</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = identificador>gen</span><span class = palabraReservada>def</span>&nbsp;<span class = identificador>main</span><span class = delimitador>(</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>pass</span><span class = palabraReservada>if</span>&nbsp;<span class = identificador>__name__</span>&nbsp;<span class = operador>=</span><span class = operador>=</span>&nbsp;<span class = cadena>"__main__"</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>main</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<div class='nombreArchivo'>
+<h3>test/test10.txt</h4>
+</div>
+
+		</div>
+	</div>
+</body>
+</html>
