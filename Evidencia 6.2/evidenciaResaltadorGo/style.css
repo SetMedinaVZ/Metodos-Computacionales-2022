@@ -1,0 +1,56 @@
+body{
+    background-color:#282c34 !important;
+}
+
+.delimitador{
+    color: aqua;
+}
+
+.cadena{
+    color: #035e03;
+}
+
+.comentario{
+    color: gray;
+}
+
+.palabraReservada{
+    color: #c5a5c5;
+}
+
+.boolean{
+    color: #ffff00;
+}
+
+.operador, .numero{
+    color: #be1313;
+}
+
+
+.identificador{
+    color: white;
+}
+
+.funcion{
+    color: #3587e7;
+}
+
+.error{
+    color: white;
+    text-decoration: underline wavy red;
+}
+
+h3,h4{
+    color: white;
+}
+
+.nombreArchivo{
+    border: 2px white solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div5{
+    margin-left: 1vw;
+}

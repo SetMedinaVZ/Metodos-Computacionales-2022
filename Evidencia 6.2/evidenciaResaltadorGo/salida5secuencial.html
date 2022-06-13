@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltador de sintaxis</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Resaltador léxico</span>
+        </div>
+    </nav>
+    <div class="parent">
+        <div class="d-flex justify-content-center bg-white">
+            <img
+                src="./img/Python.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+            <img
+                src="./img/Go.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+        </div>
+        <div class="div5">
+
+<p><span class = palabraReservada>import</span>&nbsp;<span class = identificador>sys</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>re</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>string</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>httplib</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>urllib2</span><span class = palabraReservada>import</span>&nbsp;<span class = identificador>re</span><span class = palabraReservada>def</span>&nbsp;<span class = identificador>StripTags</span><span class = delimitador>(</span><span class = identificador>text</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>finished</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = numero>0</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>while</span>&nbsp;<span class = palabraReservada>not</span>&nbsp;<span class = identificador>finished</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>finished</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = numero>1</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>start</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>text</span><span class = delimitador>.</span><span class = identificador>find</span><span class = delimitador>(</span><span class = cadena>"<"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>if</span>&nbsp;<span class = identificador>start</span>&nbsp;<span class = operador>></span><span class = operador>=</span>&nbsp;<span class = numero>0</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>stop</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>text</span><span class = delimitador>[</span><span class = identificador>start</span><span class = delimitador>:</span><span class = delimitador>]</span><span class = delimitador>.</span><span class = identificador>find</span><span class = delimitador>(</span><span class = cadena>">"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>if</span>&nbsp;<span class = identificador>stop</span>&nbsp;<span class = operador>></span><span class = operador>=</span>&nbsp;<span class = numero>0</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>text</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>text</span><span class = delimitador>[</span><span class = delimitador>:</span><span class = identificador>start</span><span class = delimitador>]</span>&nbsp;<span class = operador>+</span>&nbsp;<span class = identificador>text</span><span class = delimitador>[</span><span class = identificador>start</span><span class = operador>+</span><span class = identificador>stop</span><span class = operador>+</span><span class = numero>1</span><span class = delimitador>:</span><span class = delimitador>]</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>finished</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = numero>0</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = identificador>text</span><span class = palabraReservada>if</span>&nbsp;<span class = identificador>len</span><span class = delimitador>(</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>)</span>&nbsp;<span class = operador>!</span><span class = operador>=</span>&nbsp;<span class = numero>2</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\nExtracts emails from google results.\n"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\nUsage : ./goog-mail.py <domain-name>\n"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>exit</span><span class = delimitador>(</span><span class = numero>1</span><span class = delimitador>)</span></p>
+<p>&nbsp;</p>
+<p><span class = identificador>domain_name</span><span class = operador>=</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>1</span><span class = delimitador>]</span></p>
+<p><span class = identificador>d</span><span class = operador>=</span><span class = delimitador>{</span><span class = delimitador>}</span></p>
+<p><span class = identificador>page_counter</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = numero>0</span></p>
+<p><span class = palabraReservada>try</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>while</span>&nbsp;<span class = identificador>page_counter</span>&nbsp;<span class = operador><</span>&nbsp;<span class = numero>50</span>&nbsp;<span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>results</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = cadena>"http://groups.google.com/groups?q="</span>&nbsp;<span class = operador>+</span>&nbsp;<span class = identificador>str</span><span class = delimitador>(</span><span class = identificador>domain_name</span><span class = delimitador>)</span><span class = operador>+</span><span class = cadena>"&hl=en&lr=&ie=UTF-8&start="</span>&nbsp;<span class = operador>+</span>&nbsp;<span class = identificador>repr</span><span class = delimitador>(</span><span class = identificador>page_counter</span><span class = delimitador>)</span>&nbsp;<span class = operador>+</span>&nbsp;<span class = cadena>"&sa=N"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>request</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>urllib2</span><span class = delimitador>.</span><span class = identificador>Request</span><span class = delimitador>(</span><span class = identificador>results</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>request</span><span class = delimitador>.</span><span class = identificador>add_header</span><span class = delimitador>(</span><span class = cadena>"User-Agent"</span><span class = delimitador>,</span><span class = cadena>"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>opener</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>urllib2</span><span class = delimitador>.</span><span class = identificador>build_opener</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>text</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>opener</span><span class = delimitador>.</span><span class = identificador>open</span><span class = delimitador>(</span><span class = identificador>request</span><span class = delimitador>)</span><span class = delimitador>.</span><span class = identificador>read</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>emails</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = delimitador>(</span><span class = identificador>re</span><span class = delimitador>.</span><span class = identificador>findall</span><span class = delimitador>(</span><span class = cadena>"([\w\.\-]+@"</span><span class = operador>+</span><span class = identificador>domain_name</span><span class = operador>+</span><span class = cadena>")"</span><span class = delimitador>,</span><span class = identificador>StripTags</span><span class = delimitador>(</span><span class = identificador>text</span><span class = delimitador>)</span><span class = delimitador>)</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>for</span>&nbsp;<span class = identificador>email</span>&nbsp;<span class = palabraReservada>in</span>&nbsp;<span class = identificador>emails</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>d</span><span class = delimitador>[</span><span class = identificador>email</span><span class = delimitador>]</span><span class = operador>=</span><span class = numero>1</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>uniq_emails</span><span class = operador>=</span><span class = identificador>d</span><span class = delimitador>.</span><span class = identificador>keys</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>page_counter</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>page_counter</span>&nbsp;<span class = operador>+</span><span class = numero>10</span></p>
+<p><span class = palabraReservada>except</span>&nbsp;<span class = identificador>IOError</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"Can"</span><span class = identificador>t</span>&nbsp;<span class = identificador>connect</span>&nbsp;<span class = identificador>to</span>&nbsp;<span class = identificador>Google</span>&nbsp;<span class = identificador>Groups</span><span class = operador>!</span><span class = cadena>"+"</span></p>
+<p>&nbsp;</p>
+<p><span class = identificador>"page_counter_web</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = palabraReservada>try</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++"</span><span class = operador>+</span><span class = cadena>""</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"+ Google Web & Group Results:"</span><span class = operador>+</span><span class = cadena>""</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n"</span><span class = operador>+</span><span class = cadena>""</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>while</span>&nbsp;<span class = identificador>page_counter_web</span>&nbsp;<span class = operador><</span>&nbsp;<span class = numero>50</span>&nbsp;<span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>results_web</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = cadena>"http://www.google.com/search?q=%40"</span><span class = operador>+</span><span class = identificador>str</span><span class = delimitador>(</span><span class = identificador>domain_name</span><span class = delimitador>)</span><span class = operador>+</span><span class = cadena>"&hl=en&lr=&ie=UTF-8&start="</span><span class = operador>+</span>&nbsp;<span class = identificador>repr</span><span class = delimitador>(</span><span class = identificador>page_counter_web</span><span class = delimitador>)</span>&nbsp;<span class = operador>+</span>&nbsp;<span class = cadena>"&sa=N"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>request_web</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>urllib2</span><span class = delimitador>.</span><span class = identificador>Request</span><span class = delimitador>(</span><span class = identificador>results_web</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>request_web</span><span class = delimitador>.</span><span class = identificador>add_header</span><span class = delimitador>(</span><span class = cadena>"User-Agent"</span><span class = delimitador>,</span><span class = cadena>"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>opener_web</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>urllib2</span><span class = delimitador>.</span><span class = identificador>build_opener</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>text</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>opener_web</span><span class = delimitador>.</span><span class = identificador>open</span><span class = delimitador>(</span><span class = identificador>request_web</span><span class = delimitador>)</span><span class = delimitador>.</span><span class = identificador>read</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>emails_web</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = delimitador>(</span><span class = identificador>re</span><span class = delimitador>.</span><span class = identificador>findall</span><span class = delimitador>(</span><span class = cadena>"([\w\.\-]+@"</span><span class = operador>+</span><span class = identificador>domain_name</span><span class = operador>+</span><span class = cadena>")"</span><span class = delimitador>,</span><span class = identificador>StripTags</span><span class = delimitador>(</span><span class = identificador>text</span><span class = delimitador>)</span><span class = delimitador>)</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>for</span>&nbsp;<span class = identificador>email_web</span>&nbsp;<span class = palabraReservada>in</span>&nbsp;<span class = identificador>emails_web</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>d</span><span class = delimitador>[</span><span class = identificador>email_web</span><span class = delimitador>]</span><span class = operador>=</span><span class = numero>1</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>uniq_emails_web</span><span class = operador>=</span><span class = identificador>d</span><span class = delimitador>.</span><span class = identificador>keys</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>page_counter_web</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>page_counter_web</span>&nbsp;<span class = operador>+</span><span class = numero>10</span></p>
+<p>&nbsp;</p>
+<p><span class = palabraReservada>except</span>&nbsp;<span class = identificador>IOError</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"Can"</span><span class = identificador>t</span>&nbsp;<span class = identificador>connect</span>&nbsp;<span class = identificador>to</span>&nbsp;<span class = identificador>Google</span>&nbsp;<span class = identificador>Web</span><span class = operador>!</span><span class = cadena>"+"</span></p>
+<p><span class = identificador>"for</span>&nbsp;<span class = identificador>uniq_emails_web</span>&nbsp;<span class = palabraReservada>in</span>&nbsp;<span class = identificador>d</span><span class = delimitador>.</span><span class = identificador>keys</span><span class = delimitador>(</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = identificador>uniq_emails_web</span><span class = operador>+</span><span class = cadena>""</span></p>
+<div class='nombreArchivo'>
+<h3>test/test5.txt</h4>
+</div>
+
+		</div>
+	</div>
+</body>
+</html>

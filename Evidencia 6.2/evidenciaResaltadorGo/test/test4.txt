@@ -1,0 +1,33 @@
+import os
+
+# Sub types.
+SubTypes = [".srt"]
+
+# Video types.
+VideoTypes = [".mp4", ".avi", ".mkv"]
+
+def endsWith(str, list):
+    for string in list:
+        if str.endswith(string):
+            return True
+    return False
+
+def getFiles(path, types):
+    return list(filter(lambda file: endsWith(file, types), os.listdir(path)))
+    
+
+# Get the subtitles
+subs = getFiles("subs", SubTypes)
+
+# Get the video filename
+videoFiles = getFiles(".", VideoTypes)
+if videoFiles:
+    print("%d video files found." % len(videoFiles))
+    
+    videoFile = videoFiles[0]
+    videoBaseName = videoFile[:videoFile.rfind(".")]
+    for sub in subs:
+        # Simulate copying because there is no method for it.
+        id, lang = sub[:sub.rfind(".")].split("_")
+        lang = lang[:3].upper()
+        print("%s.%s-%s.srt" %(videoBaseName, lang, id))

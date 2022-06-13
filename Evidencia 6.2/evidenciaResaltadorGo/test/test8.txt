@@ -1,0 +1,8 @@
+FILAS = 4
+COLUMNAS = 4
+vector=[]
+for i in range(FILAS):
+    vector.append([])
+    for j in range(COLUMNAS):
+        vector[i].append(None)
+        print vector[i]

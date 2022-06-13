@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltador de sintaxis</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Resaltador léxico</span>
+        </div>
+    </nav>
+    <div class="parent">
+        <div class="d-flex justify-content-center bg-white">
+            <img
+                src="./img/Python.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+            <img
+                src="./img/Go.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+        </div>
+        <div class="div5">
+
+<p><span class = palabraReservada>import</span>&nbsp;<span class = identificador>os</span></p>
+<p><span class = comentario># Sub types.</span></p>
+<p><span class = identificador>SubTypes</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = delimitador>[</span><span class = cadena>".srt"</span><span class = delimitador>]</span></p>
+<p></p>
+<p><span class = comentario># Video types.</span></p>
+<p><span class = identificador>VideoTypes</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = delimitador>[</span><span class = cadena>".mp4"</span><span class = delimitador>,</span>&nbsp;<span class = cadena>".avi"</span><span class = delimitador>,</span>&nbsp;<span class = cadena>".mkv"</span><span class = delimitador>]</span></p>
+<p></p>
+<p><span class = palabraReservada>def</span>&nbsp;<span class = identificador>endsWith</span><span class = delimitador>(</span><span class = identificador>str</span><span class = delimitador>,</span>&nbsp;<span class = identificador>list</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>for</span>&nbsp;<span class = identificador>string</span>&nbsp;<span class = palabraReservada>in</span>&nbsp;<span class = identificador>list</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>if</span>&nbsp;<span class = identificador>str</span><span class = delimitador>.</span><span class = identificador>endswith</span><span class = delimitador>(</span><span class = identificador>string</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = palabraReservada>True</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = palabraReservada>False</span></p>
+<p><span class = palabraReservada>def</span>&nbsp;<span class = identificador>getFiles</span><span class = delimitador>(</span><span class = identificador>path</span><span class = delimitador>,</span>&nbsp;<span class = identificador>types</span><span class = delimitador>)</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>return</span>&nbsp;<span class = identificador>list</span><span class = delimitador>(</span><span class = identificador>filter</span><span class = delimitador>(</span><span class = palabraReservada>lambda</span>&nbsp;<span class = identificador>file</span><span class = delimitador>:</span>&nbsp;<span class = identificador>endsWith</span><span class = delimitador>(</span><span class = identificador>file</span><span class = delimitador>,</span>&nbsp;<span class = identificador>types</span><span class = delimitador>)</span><span class = delimitador>,</span>&nbsp;<span class = identificador>os</span><span class = delimitador>.</span><span class = identificador>listdir</span><span class = delimitador>(</span><span class = identificador>path</span><span class = delimitador>)</span><span class = delimitador>)</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p></p>
+<p><span class = comentario># Get the subtitles</span></p>
+<p><span class = identificador>subs</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>getFiles</span><span class = delimitador>(</span><span class = cadena>"subs"</span><span class = delimitador>,</span>&nbsp;<span class = identificador>SubTypes</span><span class = delimitador>)</span></p>
+<p></p>
+<p><span class = comentario># Get the video filename</span></p>
+<p><span class = identificador>videoFiles</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>getFiles</span><span class = delimitador>(</span><span class = cadena>"."</span><span class = delimitador>,</span>&nbsp;<span class = identificador>VideoTypes</span><span class = delimitador>)</span></p>
+<p><span class = palabraReservada>if</span>&nbsp;<span class = identificador>videoFiles</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span><span class = delimitador>(</span><span class = cadena>"%d video files found."</span>&nbsp;<span class = operador>%</span>&nbsp;<span class = identificador>len</span><span class = delimitador>(</span><span class = identificador>videoFiles</span><span class = delimitador>)</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>videoFile</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>videoFiles</span><span class = delimitador>[</span><span class = numero>0</span><span class = delimitador>]</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>videoBaseName</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>videoFile</span><span class = delimitador>[</span><span class = delimitador>:</span><span class = identificador>videoFile</span><span class = delimitador>.</span><span class = identificador>rfind</span><span class = delimitador>(</span><span class = cadena>"."</span><span class = delimitador>)</span><span class = delimitador>]</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>for</span>&nbsp;<span class = identificador>sub</span>&nbsp;<span class = palabraReservada>in</span>&nbsp;<span class = identificador>subs</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = comentario># Simulate copying because there is no method for it.</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>id</span><span class = delimitador>,</span>&nbsp;<span class = identificador>lang</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>sub</span><span class = delimitador>[</span><span class = delimitador>:</span><span class = identificador>sub</span><span class = delimitador>.</span><span class = identificador>rfind</span><span class = delimitador>(</span><span class = cadena>"."</span><span class = delimitador>)</span><span class = delimitador>]</span><span class = delimitador>.</span><span class = identificador>split</span><span class = delimitador>(</span><span class = cadena>"_"</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>lang</span>&nbsp;<span class = operador>=</span>&nbsp;<span class = identificador>lang</span><span class = delimitador>[</span><span class = delimitador>:</span><span class = numero>3</span><span class = delimitador>]</span><span class = delimitador>.</span><span class = identificador>upper</span><span class = delimitador>(</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span><span class = delimitador>(</span><span class = cadena>"%s.%s-%s.srt"</span>&nbsp;<span class = operador>%</span><span class = delimitador>(</span><span class = identificador>videoBaseName</span><span class = delimitador>,</span>&nbsp;<span class = identificador>lang</span><span class = delimitador>,</span>&nbsp;<span class = identificador>id</span><span class = delimitador>)</span><span class = delimitador>)</span></p>
+<div class='nombreArchivo'>
+<h3>test/test4.txt</h4>
+</div>
+
+		</div>
+	</div>
+</body>
+</html>

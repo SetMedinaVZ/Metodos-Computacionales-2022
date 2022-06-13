@@ -1,0 +1,17 @@
+from math import sqrt,floor
+ 
+if __name__ == "__main__":
+    n=int(raw_input("[+] Valor de n: "))
+ 
+    numeros = [i for i in range(2,n+1)]  # {2...n}
+ 
+    for i in numeros:
+        if i > 0:
+            for a in numeros[i-1:]:
+                if a%i==0:
+                    numeros[a-2]=0
+ 
+    print "[+] Primos encontrados:"
+    for i in numeros:
+        if i > 0:
+            print i

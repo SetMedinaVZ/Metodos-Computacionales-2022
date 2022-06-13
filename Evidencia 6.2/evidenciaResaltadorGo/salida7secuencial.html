@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltador de sintaxis</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Resaltador léxico</span>
+        </div>
+    </nav>
+    <div class="parent">
+        <div class="d-flex justify-content-center bg-white">
+            <img
+                src="./img/Python.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+            <img
+                src="./img/Go.jpg"
+                class="img-fluid"
+                alt=""
+                width="100px"
+            />
+        </div>
+        <div class="div5">
+
+<p><span class = palabraReservada>import</span>&nbsp;<span class = identificador>sys</span><span class = identificador>num1</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = identificador>num2</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = identificador>a</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = identificador>b</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = identificador>mcm</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = identificador>mcd</span><span class = operador>=</span><span class = numero>0</span></p>
+<p><span class = palabraReservada>if</span>&nbsp;<span class = identificador>len</span><span class = delimitador>(</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>)</span><span class = operador>></span><span class = operador>=</span><span class = numero>2</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"nombre del programa: "</span><span class = delimitador>,</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>0</span><span class = delimitador>]</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\nnumero 1: "</span><span class = delimitador>,</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>1</span><span class = delimitador>]</span><span class = delimitador>,</span><span class = cadena>",numero 2:  "</span><span class = delimitador>,</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>2</span><span class = delimitador>]</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>num1</span><span class = operador>=</span><span class = identificador>int</span><span class = delimitador>(</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>1</span><span class = delimitador>]</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>num2</span><span class = operador>=</span><span class = identificador>int</span><span class = delimitador>(</span><span class = identificador>sys</span><span class = delimitador>.</span><span class = identificador>argv</span><span class = delimitador>[</span><span class = numero>2</span><span class = delimitador>]</span><span class = delimitador>)</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>a</span><span class = operador>=</span><span class = identificador>num1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>b</span><span class = operador>=</span><span class = identificador>num2</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>while</span>&nbsp;<span class = identificador>a</span><span class = operador>!</span><span class = operador>=</span><span class = identificador>b</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>if</span>&nbsp;<span class = identificador>a</span><span class = operador>></span><span class = identificador>b</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>a</span><span class = operador>=</span><span class = identificador>a</span><span class = operador>-</span><span class = identificador>b</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>else</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>b</span><span class = operador>=</span><span class = identificador>b</span><span class = operador>-</span><span class = identificador>a</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>mcm</span><span class = operador>=</span><span class = delimitador>(</span><span class = identificador>num1</span><span class = operador>*</span><span class = identificador>num2</span><span class = delimitador>)</span><span class = operador>/</span><span class = identificador>b</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = identificador>mcd</span><span class = operador>=</span><span class = identificador>b</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\nM.C.M. obtenido: "</span><span class = delimitador>,</span><span class = identificador>mcm</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"\nM.C.D. obtenido: "</span><span class = delimitador>,</span><span class = identificador>mcd</span><span class = palabraReservada>else</span><span class = delimitador>:</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class = palabraReservada>print</span>&nbsp;<span class = cadena>"no se introdujo ningÃºn dato"</span></p>
+<div class='nombreArchivo'>
+<h3>test/test7.txt</h4>
+</div>
+
+		</div>
+	</div>
+</body>
+</html>
